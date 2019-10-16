@@ -62,36 +62,36 @@ class TestLinkedList(unittest.TestCase):
         ll = LinkedList()
         self.assertTrue(ll.is_sentinel())
 
-    # def test_not_sentinel_node(self):
-    #     """
-    #     A list node with a value is not a sentinel node.
-    #     """
-    #     ll = LinkedList(fake_value())
-    #     self.assertFalse(ll.is_sentinel())
+    def test_not_sentinel_node(self):
+        """
+        A list node with a value is not a sentinel node.
+        """
+        ll = LinkedList(fake_value())
+        self.assertFalse(ll.is_sentinel())
 
     # """
     # Empty List
     # """
 
-    # def test_empty(self):
-    #     """
-    #     A list is initially empty.
-    #     """
-    #     ll = LinkedList()
-    #     self.assertTrue(ll.is_empty())
+    def test_empty(self):
+        """
+        A list is initially empty.
+        """
+        ll = LinkedList()
+        self.assertTrue(ll.is_empty())
 
-    # def test_not_empty(self):
-    #     """
-    #     A list node with a prev or next refering to anything other than itself
-    #     is not empty.
-    #     """
-    #     ll = LinkedList()
-    #     ll.next = fake_value()
-    #     self.assertFalse(ll.is_empty())
-    #     ll.prev = fake_value()
-    #     self.assertFalse(ll.is_empty())
-    #     ll.next = ll
-    #     self.assertFalse(ll.is_empty())
+    def test_not_empty(self):
+        """
+        A list node with a prev or next refering to anything other than itself
+        is not empty.
+        """
+        ll = LinkedList()
+        ll.next = fake_value()
+        self.assertFalse(ll.is_empty())
+        ll.prev = fake_value()
+        self.assertFalse(ll.is_empty())
+        ll.next = ll
+        self.assertFalse(ll.is_empty())
 
     # def test_empty_is_last(self):
     #     """
