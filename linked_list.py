@@ -9,4 +9,19 @@
 
 class LinkedList:
 
+    def __init__(self, value = None):
+        self.value = value
+        self.next = self
+        self.prev = self
+
+    def __next__(self):
+        return self.next
+
+    def __prev__(self):
+        return self.prev
+
+    def is_sentinel(self):
+        return self.value == None
+    
+
     pass
