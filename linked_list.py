@@ -25,6 +25,17 @@ class LinkedList:
 
     def is_empty(self):
         return self.next == self and self.prev == self
-    
+
+    def is_last(self):
+        return self.next.value == None
+
+    def last(self):
+        return self
+
+    def append(self, nl):
+        nl.prev = self
+        nl.next = self
+        self.next = nl
+        self.prev = nl
 
     pass

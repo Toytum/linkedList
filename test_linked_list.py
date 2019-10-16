@@ -93,28 +93,28 @@ class TestLinkedList(unittest.TestCase):
         ll.next = ll
         self.assertFalse(ll.is_empty())
 
-    # def test_empty_is_last(self):
-    #     """
-    #     In an empty list, the sentinel is_last().
-    #     """
-    #     ll = LinkedList()
-    #     self.assertTrue(ll.is_last())
+    def test_empty_is_last(self):
+        """
+        In an empty list, the sentinel is_last().
+        """
+        ll = LinkedList()
+        self.assertTrue(ll.is_last())
 
-    # def test_last_of_empty(self):
-    #     """
-    #     The last node of an empty list is the sentinel node itself.
-    #     """
-    #     ll = LinkedList()
-    #     self.assertEqual(ll, ll.last())
+    def test_last_of_empty(self):
+        """
+        The last node of an empty list is the sentinel node itself.
+        """
+        ll = LinkedList()
+        self.assertEqual(ll, ll.last())
 
-    # def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
-    #     """
-    #     Appending to an empty list sets the sentinel's `next` to the new node.
-    #     """
-    #     ll = LinkedList()
-    #     appendee = LinkedList(fake_value())
-    #     ll.append(appendee)
-    #     self.assertEqual(appendee, ll.next)
+    def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
+        """
+        Appending to an empty list sets the sentinel's `next` to the new node.
+        """
+        ll = LinkedList()
+        appendee = LinkedList(fake_value())
+        ll.append(appendee)
+        self.assertEqual(appendee, ll.next)
 
     # def test_append_to_empty_list_sets_prev_of_sentinel_to_new_node(self):
     #     """
