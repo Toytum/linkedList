@@ -9,16 +9,10 @@
 
 class LinkedList:
 
-    # counter = 0
-
     def __init__(self, value = None):
         self.value = value
         self.next = self
         self.prev = self
-        self.index = 0
-
-        # self.counter =+ 1
-        # self.index = self.counter
 
     def __next__(self):
         return self.next
@@ -73,17 +67,25 @@ class LinkedList:
         self.next = elem
         elem.prev = self
 
-    # def at(self, i):
-    #     if (self.index == i):
-    #         return self
-    #     elif (self.index > i):
-    #         self.prev.at(self.index)
-    #     elif (self.index < i):
-    #         self.next.at(self.index)
+    def at(self, index, counter=0):
+        if counter == index:
+            return self
+        counter += 1
+        return self.next.at(index, counter)
 
-    def at(self, i):
-        sentinel = self.sentinel()
-        
-        while self.index < i:
-            sentinel.next.index =+ 1
-    pass
+    def search(self, target):
+        if self.value is target:
+            return self
+        elif self.is_last():
+            return None
+        else:
+            return self.next.search(target)
+
+    def insert_in_order(self, node):
+        if self.is_empty() or self.last().value < node.value:
+            return self.append(node)
+        elif self.is_sentinel() is False and self.value > node.value:
+            return self.prev.insert(node)
+        elif self.is_sentinel() is False and self.value < node.value:
+            return self.insert(node)
+        return self.next.insert_in_order(node)
